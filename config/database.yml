@@ -1,0 +1,24 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root 
+  password: root
+  host: localhost
+
+development:
+  <<: *default
+  database: loveicebreak_development
+
+  
+test:
+  <<: *default
+  database: loveicebreak_test
+
+
+production:
+  <<: *default
+  database: loveicebreak_production
+  username: loveicebreak
+  password: <%= ENV['LOVEICEBREAK_DATABASE_PASSWORD'] %>

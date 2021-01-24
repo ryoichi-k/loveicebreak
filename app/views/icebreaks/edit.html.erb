@@ -1,0 +1,8 @@
+<h1>アイスブレイク編集</h1>
+<%= form_tag("/icebreaks/#{@icebreak.id}/update") do %>
+  <p>アイスブレイク名</p>        
+  <input name="name" value="<%= @icebreak.name %>">
+  <p>メールアドレス</p>        
+  <input name="description" value="<%= @icebreak.description %>">
+  <input type="submit" value="保存">     
+<% end %>

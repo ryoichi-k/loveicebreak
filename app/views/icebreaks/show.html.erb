@@ -1,0 +1,4 @@
+<h2><%= @icebreak.name %></h2>
+<p><%= @icebreak.description %></p>
+<%= link_to("編集", "/icebreaks/#{@icebreak.id}/edit")%>
+<%= link_to("削除", "/icebreaks/#{@icebreak.id}/destroy", {method:"post"})%>

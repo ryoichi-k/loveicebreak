@@ -1,0 +1,10 @@
+<h1>新規アイスブレイク登録</h1>
+
+<%= form_tag("/icebreaks/create") do %>
+<p>アイスブレイク名</p>
+<input name="name" value= "アイスブレイク名">
+<p>内容</p>
+<input name="description" value= "内容">
+
+<input type= "submit" value="新規作成">
+<% end %>

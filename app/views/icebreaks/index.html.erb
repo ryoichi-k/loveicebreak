@@ -1,0 +1,4 @@
+<% @icebreaks.each do |icebreak| %>
+  <%= icebreak.name %>
+  <%= link_to(icebreak.name, "/icebreaks/#{icebreak.id}") %>
+<% end %>
