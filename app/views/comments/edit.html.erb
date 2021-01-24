@@ -1,0 +1,8 @@
+<h1>コメント編集</h1>
+<%= form_tag("/comments/#{@comment.id}/update") do %>
+  
+  <p>コメント</p>        
+  <textarea name="content" value=""><%= @comment.content %></textarea>
+  <br>
+  <input type="submit" value="保存">     
+<% end %>

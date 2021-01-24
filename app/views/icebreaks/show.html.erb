@@ -2,3 +2,46 @@
 <p><%= @icebreak.description %></p>
 <%= link_to("編集", "/icebreaks/#{@icebreak.id}/edit")%>
 <%= link_to("削除", "/icebreaks/#{@icebreak.id}/destroy", {method:"post"})%>
+
+<br><br>
+
+<p>Star</p>
+<p id="star"></p>
+<p id="star_num" style=""><%= @star_ave %></p>
+
+
+
+<%= form_tag("/comments/create") do %>
+
+<p>コメントする</p>
+<textarea name="content" id="content" value=""></textarea>
+<br>
+<p>評価</p>
+<select name="star" >
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select>
+<br>
+
+<input type="hidden" name="user_id" id="user_id" value="<%= current_user.id %>">
+<input type="hidden" name="icebreak_id" id="icebreak_id" value="<%= @icebreak.id %>">
+
+<br>
+<input type= "submit" value="コメントする">
+
+<% end %>
+
+<br>
+<h4>コメント一覧</h4>
+<% @comment.each do |comment|%>
+  
+  <%= link_to(comment.content,"/comments/#{comment.id}")%>
+  <br>
+<% end %>
+
+
+<br>
+<%= link_to("アイスブレイク一覧へ", "/icebreaks") %>

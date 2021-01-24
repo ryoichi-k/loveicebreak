@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'home#top'
+
   post "users/create" => "users#create"
   get    'signup' => 'users#new'
   get "login" => "users#login_form"
@@ -17,5 +19,11 @@ Rails.application.routes.draw do
   get "icebreaks/:id/edit"=>"icebreaks#edit"
   post "icebreaks/:id/update"=>"icebreaks#update"
   post "icebreaks/:id/destroy"=>"icebreaks#destroy"
+
+  get "comments/:id"=> "comments#show"
+  post "comments/create"=>"comments#create"
+  get "comments/:id/edit"=>"comments#edit"
+  post "comments/:id/update"=>"comments#update"
+  post "comments/:id/destroy"=>"comments#destroy"
   
 end

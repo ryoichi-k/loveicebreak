@@ -1,4 +1,13 @@
+
+<p>全てのアイスブレイク</p>
+
 <% @icebreaks.each do |icebreak| %>
-  <%= icebreak.name %>
+
+
+  <%#= icebreak.name %>
+  
   <%= link_to(icebreak.name, "/icebreaks/#{icebreak.id}") %>
+  <br>
 <% end %>
+
+<%= link_to("マイページ", "/") %>

@@ -1,0 +1,10 @@
+
+<h2><%= @comment.id %></h2>
+
+<p>コメント</p>
+<p><%= @comment.content %></p>
+<%= link_to("編集", "/comments/#{@comment.id}/edit")%>
+<%= link_to("削除", "/comments/#{@comment.id}/destroy", {method:"post"})%>
+
+
+

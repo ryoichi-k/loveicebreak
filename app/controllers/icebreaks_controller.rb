@@ -1,10 +1,20 @@
 class IcebreaksController < ApplicationController
+
+    before_action :move_to_signed_in
+ 
+
     def index
         @icebreaks = Icebreak.all
     end
 
     def show
         @icebreak = Icebreak.find_by(id: params[:id])
+        @comment = Comment.where(icebreak_id: params[:id])
+        #icebreakに紐づいたコメントを取得
+        # @star_sum = @comment.sum(:star)
+        @star_ave =  @comment.average(:star).round
+        #icebreakに紐づいたstarの数を四捨五入して取得
+        
     end
 
     def create
@@ -37,4 +47,20 @@ class IcebreaksController < ApplicationController
         @icebreak.destroy
         redirect_to("/icebreaks")
     end
+
+    private
+    def move_to_signed_in
+      unless user_signed_in?
+        #サインインしていないユーザーはログインページが表示される
+        redirect_to  '/users/sign_in'
+      end
+    end
+
+
+
+
+
+
+
+
 end
