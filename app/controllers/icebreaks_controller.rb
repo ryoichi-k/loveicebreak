@@ -1,6 +1,7 @@
 class IcebreaksController < ApplicationController
 
-    before_action :move_to_signed_in
+    before_action :move_to_signed_in 
+    #ファイルの一番下にメソッドを記載。ログインしてないユーザーはログイン画面へ
  
 
     def index
@@ -9,9 +10,15 @@ class IcebreaksController < ApplicationController
 
     def show
         @icebreak = Icebreak.find_by(id: params[:id])
+
         @comment = Comment.where(icebreak_id: params[:id])
-        @user_comment = Comment.where(icebreak_id: params[:id],user_id: current_user.id)
         #icebreakに紐づいたコメントを取得
+
+        # @user_name = User.where(id: @comment.user_id)
+        #icebreakに紐づいたコメントの書いた人の名前を取得
+
+        @user_comment = Comment.where(icebreak_id: params[:id],user_id: current_user.id)
+        #icebreakに紐づいたコメントを現在ログインしているユーザーが投稿したかをチェックするため用
 
         
         unless @comment.blank?

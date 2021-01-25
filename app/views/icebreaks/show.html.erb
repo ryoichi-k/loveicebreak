@@ -54,9 +54,11 @@
 <br>
 <h4>コメント一覧</h4>
 <% @comment.each do |comment|%>
-  
-  <%= link_to(comment.content,"/comments/#{comment.id}")%>
-  <br>
+  <p>
+    <%= link_to(comment.content,"/comments/#{comment.id}")%>
+    <span>User ID <%= comment.user_id %></span>
+  </p>
+ 
 <% end %>
 
 

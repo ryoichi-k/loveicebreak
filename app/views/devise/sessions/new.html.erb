@@ -1,7 +1,14 @@
 <h2>Log in</h2>
 <p>views/device/sessions/new</p>
+<p>config/initilizers/devise.rbに名前をチェックさせる記述を書いています。49行目。</p>
+
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+  </div>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
