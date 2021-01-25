@@ -1,10 +1,17 @@
-<h1>新規アイスブレイク登録</h1>
+<h2 class="center">新規アイスブレイク登録</h2>
 
+<div class="center">
 <%= form_tag("/icebreaks/create") do %>
-<p>アイスブレイク名</p>
-<input name="name" value= "アイスブレイク名">
-<p>内容</p>
-<input name="description" value= "内容">
 
+<p>アイスブレイク名</p>
+<input name="name" value= "" placeholder="アイスブレイク名">
+<p>内容</p>
+<textarea name="description" value= "" placeholder="内容"></textarea>
+
+<br><br>
 <input type= "submit" value="新規作成">
+
 <% end %>
+</div>
+
+<p><%= link_to("アイスブレイク一覧へ", "/icebreaks") %></p>

@@ -1,7 +1,8 @@
-<h1>コメント編集</h1>
-<%= form_tag("/comments/#{@comment.id}/update") do %>
-  
-  <p>コメント</p>        
+<h2 class="center">コメント編集画面</h2>
+
+<div class="center">  
+
+<%= form_tag("/comments/#{@comment.id}/update") do %> 
   <textarea name="content" value=""><%= @comment.content %></textarea>
   <br>
 
@@ -18,3 +19,8 @@
   
   <input type="submit" value="保存">     
 <% end %>
+
+</div>
+
+<p><%= link_to("戻る", "/comments/#{@comment.id}") %></p>
+<p><%= link_to("アイスブレイク一覧へ", "/icebreaks") %></p>
