@@ -1,12 +1,8 @@
 
-<p>全てのアイスブレイク</p>
+<h2 class="center">全てのアイスブレイク</h2>
 
 <% @icebreaks.each do |icebreak| %>
-
-
-  <%#= icebreak.name %>
-  
-  <%= link_to(icebreak.name, "/icebreaks/#{icebreak.id}") %>
+  <p class="list"><%= link_to(icebreak.name, "/icebreaks/#{icebreak.id}") %></p>
   <br>
 <% end %>
 

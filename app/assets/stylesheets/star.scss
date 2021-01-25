@@ -1,0 +1,83 @@
+.star5_rating {
+    position: relative;
+    z-index: 0;
+    display: inline-block;
+    white-space: nowrap;
+    color: #CCCCCC;
+  
+    /* グレーカラー 自由に設定化 */
+    /*font-size: 30px; フォントサイズ 自由に設定化 */
+  
+    &:before {
+      content: '★★★★★';
+    }
+  
+    &:after {
+      content: '★★★★★';
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      color: #ffcf32;
+  
+      /* イエローカラー 自由に設定化 */
+    }
+  
+    &[data-rate="5"]:after {
+      width: 100%;
+    }
+  
+    &[data-rate="4.5"]:after {
+      width: 90%;
+    }
+  
+    &[data-rate="4"]:after {
+      width: 80%;
+    }
+  
+    &[data-rate="3.5"]:after {
+      width: 70%;
+    }
+  
+    &[data-rate="3"]:after {
+      width: 60%;
+    }
+  
+    &[data-rate="2.5"]:after {
+      width: 50%;
+    }
+  
+    &[data-rate="2"]:after {
+      width: 40%;
+    }
+  
+    &[data-rate="1.5"]:after {
+      width: 30%;
+    }
+  
+    &[data-rate="1"]:after {
+      width: 20%;
+    }
+  
+    &[data-rate="0.5"]:after {
+      width: 10%;
+    }
+  
+    &[data-rate="0"]:after {
+      width: 0%;
+    }
+  }
+  
+  /* 星5 */
+  /* 星4.5 */
+  /* 星4 */
+  /* 星3.5 */
+  /* 星3 */
+  /* 星2.5 */
+  /* 星2 */
+  /* 星1.5 */
+  /* 星1 */
+  /* 星0.5 */
+  /* 星0 */

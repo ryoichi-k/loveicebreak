@@ -10,10 +10,18 @@ class IcebreaksController < ApplicationController
     def show
         @icebreak = Icebreak.find_by(id: params[:id])
         @comment = Comment.where(icebreak_id: params[:id])
+        @user_comment = Comment.where(icebreak_id: params[:id],user_id: current_user.id)
         #icebreakに紐づいたコメントを取得
-        # @star_sum = @comment.sum(:star)
+
+        
+        unless @comment.blank?
         @star_ave =  @comment.average(:star).round
         #icebreakに紐づいたstarの数を四捨五入して取得
+        else
+        @star_ave = 0
+        #icebreakに紐づいたスターがなかったときスターの数の初期値は0
+        end
+        
         
     end
 

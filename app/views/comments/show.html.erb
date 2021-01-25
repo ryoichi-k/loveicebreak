@@ -3,8 +3,15 @@
 
 <p>コメント</p>
 <p><%= @comment.content %></p>
+<p><span class="star5_rating" data-rate="<%= @comment.star %>"></span></p>
+
+
+<% if @comment.user_id == current_user.id %>
 <%= link_to("編集", "/comments/#{@comment.id}/edit")%>
 <%= link_to("削除", "/comments/#{@comment.id}/destroy", {method:"post"})%>
+<% end %>
+
+<%= link_to("アイスブレイク一覧へ", "/icebreaks") %>
 
 
 

@@ -1,38 +1,55 @@
-<h2><%= @icebreak.name %></h2>
-<p><%= @icebreak.description %></p>
+<h2 class="center"><%= @icebreak.name %></h2>
+
+<div class="box11">
+    <p><%= @icebreak.description %></p>
+</div>
+
+
+<!--したのIF文はアイスブレイクを作った人しか編集、削除できないようにするためのもの。current_user.idはデバイスを導入することで使えるメソッド、仕組みはセッションでuserのidを保持してくれている。-->
+<% if @icebreak.user_id == current_user.id %>
 <%= link_to("編集", "/icebreaks/#{@icebreak.id}/edit")%>
 <%= link_to("削除", "/icebreaks/#{@icebreak.id}/destroy", {method:"post"})%>
+<% end %>
 
 <br><br>
 
+<!--星のデザインをassets/star.scssに記載しています。@star_aveはコメントテーブルに入っているスターの合計を人数で割ったものを入れてあります。-->
+<div class="center">
 <p>Star</p>
-<p id="star"></p>
-<p id="star_num" style=""><%= @star_ave %></p>
+<p >
+    <span class="star5_rating" data-rate="<%= @star_ave %>"></span>
+</p>
+</div>
 
 
+<% if @user_comment.ids.empty?  %>
+  <div class="center">
+    <%= form_tag("/comments/create") do %>
 
-<%= form_tag("/comments/create") do %>
+    <p>コメントする</p>
+    <textarea name="content" id="content" value=""></textarea>
+    <br>
+    <p>評価</p>
+    <select name="star" >
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    </select>
+    <br>
 
-<p>コメントする</p>
-<textarea name="content" id="content" value=""></textarea>
-<br>
-<p>評価</p>
-<select name="star" >
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-</select>
-<br>
+    <input type="hidden" name="user_id" id="user_id" value="<%= current_user.id %>">
+    <input type="hidden" name="icebreak_id" id="icebreak_id" value="<%= @icebreak.id %>">
 
-<input type="hidden" name="user_id" id="user_id" value="<%= current_user.id %>">
-<input type="hidden" name="icebreak_id" id="icebreak_id" value="<%= @icebreak.id %>">
+    <br>
+    <input type= "submit" value="コメントする">
 
-<br>
-<input type= "submit" value="コメントする">
+    <% end %>
+  </div>
 
 <% end %>
+
 
 <br>
 <h4>コメント一覧</h4>
@@ -44,4 +61,9 @@
 
 
 <br>
-<%= link_to("アイスブレイク一覧へ", "/icebreaks") %>
+<br>
+<p class="center"><%= link_to("アイスブレイク一覧へ", "/icebreaks") %></p>
+
+
+
+

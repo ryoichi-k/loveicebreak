@@ -11,6 +11,7 @@ class CommentsController < ApplicationController
 
     def show
         @comment = Comment.find_by(id: params[:id])
+        
     end
    
     def edit
@@ -20,6 +21,7 @@ class CommentsController < ApplicationController
     def update
         @comment = Comment.find_by(id: params[:id])
         @comment.content = params[:content]
+        @comment.star = params[:star]
         
         if @comment.save
             flash[:notice] = "コメントを更新しました"

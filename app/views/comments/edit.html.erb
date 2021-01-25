@@ -4,5 +4,17 @@
   <p>コメント</p>        
   <textarea name="content" value=""><%= @comment.content %></textarea>
   <br>
+
+  <p>評価</p>
+    <select name="star" >
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    </select>
+  
+  <br><br>
+  
   <input type="submit" value="保存">     
 <% end %>

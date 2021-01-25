@@ -2,13 +2,20 @@
 <%#= link_to("ログイン","/login")%>
 <%#= link_to("ユーザー一覧","/users")%>
 
+
+
 <% if user_signed_in? %>
-            
-            <%= link_to 'プロフィール変更', edit_user_registration_path %>
-            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+            <h2 class="center">Mypage</h2>
+            <p><%= link_to("全てのアイスブレイク", "/icebreaks") %></p>
+
+            <p><%= link_to 'プロフィール変更', edit_user_registration_path %></p>
+            <p><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></p>
             <% else %>
-            <%= link_to 'サインアップ', new_user_registration_path %>
-            <%= link_to 'ログイン', new_user_session_path %>
+            <p><%= link_to 'サインアップ', new_user_registration_path %></p>
+            <p><%= link_to 'ログイン', new_user_session_path %></p>
 <% end %>
 
-<%= link_to("全てのアイスブレイク", "/icebreaks") %>
+<p>cssの場所、assets/stylesheets/star.scss と index.scss </p>
+
+
+<p>views/home/top</p>

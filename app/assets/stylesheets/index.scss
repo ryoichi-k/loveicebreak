@@ -1,0 +1,39 @@
+// icebreak/index
+.list {
+color: black;
+  border-left: solid 8px orange;/*左側の線*/
+  background: whitesmoke;/*背景色*/
+  margin-bottom: 5px;/*下のバーとの余白*/
+  line-height: 1.5;
+  border-radius: 0 15px 15px 0;/*右側の角だけ丸く*/
+  padding: 0.5em;
+  list-style-type: none!important;
+}
+
+// icebreak/show
+.box11{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #5d627b;
+    background: white;
+    border-top: solid 5px #5d627b;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+}
+.box11 p {
+    margin: 0; 
+    padding: 0;
+}
+
+//icebreak 共通
+.center{
+    text-align: center;
+}
+
+h2 {
+    padding: 1rem 3rem;
+    color: #fff;
+    border-radius: 100vh;
+    background-image: -webkit-gradient(linear, right top, left top, from(#9be15d), to(#00e3ae));
+    background-image: -webkit-linear-gradient(right, #9be15d 0%, #00e3ae 100%);
+    background-image: linear-gradient(to left, #9be15d 0%, #00e3ae 100%);
+  }
