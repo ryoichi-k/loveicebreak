@@ -3,8 +3,10 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: loveicebreak 
-  host: localhost
+  username: postgres
+  password: <%= ENV['POSTGRES_PASSWORD'] %> 
+  host: icebreak_db_1
+  port: 5432
 
 development:
   <<: *default
