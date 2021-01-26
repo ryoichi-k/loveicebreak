@@ -4,9 +4,9 @@
 # URL
 https://radiant-inlet-51657.herokuapp.com/
 下記のアカウントをご使用ください。
-* name:ryo
-* email:example@sample.com
-* password:password
+* 名前:ryo
+* Eメール:example@sample.com
+* パスワード:password
 
 # 使用技術
 * Ruby 2.7.1
