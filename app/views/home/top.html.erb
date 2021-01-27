@@ -6,18 +6,24 @@
 <h2 class="center">Love Icebreak</h2>
 <% if user_signed_in? %>
             <h2 class="center">Mypage</h2>
-            <p><%= link_to("全てのアイスブレイク", "/icebreaks") %></p>
-　　　　　　　<p><%= link_to("アイスブレイク新規作成", "/icebreaks/new") %></p>
-            <p><%= link_to 'プロフィール変更', edit_user_registration_path %></p>
-            <p><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></p>
-            <% else %>
-            <p><%= link_to 'サインアップ', new_user_registration_path %></p>
-            <p><%= link_to 'ログイン', new_user_session_path %></p>
-            <p>ポートフォリオをご覧の方へ</p>
-            <p>アカウントをご用意しましたので、こちらでログインしていただくと、スムーズです。</p>
-            <p>名前：ryo</p>
-            <p>Eメール：example@sample.com</p>
-            <p>パスワード：password</p>
+              <p><%= link_to("全てのアイスブレイク", "/icebreaks") %></p>
+　　　　　　　  <p><%= link_to("アイスブレイク新規作成", "/icebreaks/new") %></p>
+              <p><%= link_to 'プロフィール変更', edit_user_registration_path %></p>
+              <p><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></p>
+<% else %>
+            
+              <div class="text-center">
+                <p><%= link_to 'サインアップ', new_user_registration_path, class: 'btn btn-success btn-lg'%></p>
+                <p><%= link_to 'ログイン', new_user_session_path, class: 'btn btn-outline-success btn-lg'%></p>
+              
+                <p>ポートフォリオをご覧の方へ</p>
+                <p>アカウントをご用意しましたので、こちらでログインしていただくと、スムーズです。</p>
+            
+                <li>名前：ryo</li>
+                <li>Eメール：example@sample.com</li>
+                <li>パスワード：password</li>
+                
+              </div>
 <% end %>
 
 
